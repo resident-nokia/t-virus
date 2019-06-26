@@ -1,0 +1,55 @@
+From 8cca5b3d31aca9d544612ea2126ce5dfd90cf4cd Mon Sep 17 00:00:00 2001
+From: Dorian Stoll <dorian.stoll@tmsp.io>
+Date: Wed, 26 Jun 2019 23:07:33 +0200
+Subject: [PATCH] Enable early mounting of vendor, for Treble support
+
+Signed-off-by: Dorian Stoll <dorian.stoll@tmsp.io>
+---
+ .../dts/fih/NB1_common/fih_memmap_nb1_evb.dtsi  | 17 +++++++++++++++++
+ arch/arm64/configs/nb1_defconfig                |  2 +-
+ 2 files changed, 18 insertions(+), 1 deletion(-)
+
+diff --git a/arch/arm64/boot/dts/fih/NB1_common/fih_memmap_nb1_evb.dtsi b/arch/arm64/boot/dts/fih/NB1_common/fih_memmap_nb1_evb.dtsi
+index 832482a46b5a..2e001be808b5 100644
+--- a/arch/arm64/boot/dts/fih/NB1_common/fih_memmap_nb1_evb.dtsi
++++ b/arch/arm64/boot/dts/fih/NB1_common/fih_memmap_nb1_evb.dtsi
+@@ -1,6 +1,23 @@
+ /* ref: msm8998.dtsi */
+ 
+ / {
++	firmware: firmware {
++		android {
++			compatible = "android,firmware";
++			fstab {
++				compatible = "android,fstab";
++				vendor {
++					compatible = "android,vendor";
++					dev = "/dev/block/platform/soc/1da4000.ufshc/by-name/vendor";
++					type = "ext4";
++					mnt_flags = "ro,barrier=1,discard";
++					fsmgr_flags = "wait,slotselect";
++					status = "ok";
++				};
++			};
++		};
++	};
++
+ 	reserved-memory {
+ 		fih_mem: fih_region@a0000000 { /* for FIH feature */
+ 			compatible = "removed-dma-pool";
+diff --git a/arch/arm64/configs/nb1_defconfig b/arch/arm64/configs/nb1_defconfig
+index 22f0759fc9db..007779b27cd8 100755
+--- a/arch/arm64/configs/nb1_defconfig
++++ b/arch/arm64/configs/nb1_defconfig
+@@ -47,7 +47,7 @@ CONFIG_THREAD_INFO_IN_TASK=y
+ CONFIG_INIT_ENV_ARG_LIMIT=32
+ CONFIG_CROSS_COMPILE=""
+ # CONFIG_COMPILE_TEST is not set
+-CONFIG_LOCALVERSION="-umbrella-nb1"
++CONFIG_LOCALVERSION="-umbrella-nb1-treble"
+ # CONFIG_LOCALVERSION_AUTO is not set
+ CONFIG_DEFAULT_HOSTNAME="(none)"
+ CONFIG_SWAP=y
+-- 
+2.21.0
+

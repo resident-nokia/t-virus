@@ -1,0 +1,10 @@
+# Data files
+data/vendor.zip
+data/*vendor.img
+data/boot.zip
+data/*boot.img
+data/system.zip
+data/*system.img
+
+# Generated image
+out/

@@ -1,0 +1,494 @@
+[Package Download Profile]
+PROFILE_VER = 10.0
+MLF_VER = 10.0
+PROJECT = "NB1"
+PLATFORM = "Q9"
+PACKAGE_NUMBER = 73
+INITOPTION = 0x20000
+INITDLTYPE = 0x60
+SECURITY_VER = 0x0001
+STORAGE = UFS
+BOOTLOADER_PART_NAME=abl_a, abl_b, xbl_a, xbl_b
+BOOTLOADER_PART_EXT=elf
+
+[Package Info Main]
+FIREHOSE_IMG = "prog_ufs_firehose_8998_ddr.elf"
+PROVISION_XML = "provision_fih.xml"
+RAWPROGRAM0_XML = "rawprogram0.xml"
+RAWPROGRAM1_XML = "rawprogram1.xml"
+RAWPROGRAM2_XML = "rawprogram2.xml"
+RAWPROGRAM3_XML = "rawprogram3.xml"
+RAWPROGRAM4_XML = "rawprogram4.xml"
+RAWPROGRAM5_XML = "rawprogram5.xml"
+PATCH0_XML = "patch0.xml"
+PATCH1_XML = "patch1.xml"
+PATCH2_XML = "patch2.xml"
+PATCH3_XML = "patch3.xml"
+PATCH4_XML = "patch4.xml"
+PATCH5_XML = "patch5.xml"
+GPT_MAIN0_IMG = "gpt_main0.bin"
+GPT_MAIN1_IMG = "gpt_main1.bin"
+GPT_MAIN2_IMG = "gpt_main2.bin"
+GPT_MAIN3_IMG = "gpt_main3.bin"
+GPT_MAIN4_IMG = "gpt_main4.bin"
+GPT_MAIN5_IMG = "gpt_main5.bin"
+GPT_BACKUP0_IMG = "gpt_backup0.bin"
+GPT_BACKUP1_IMG = "gpt_backup1.bin"
+GPT_BACKUP2_IMG = "gpt_backup2.bin"
+GPT_BACKUP3_IMG = "gpt_backup3.bin"
+GPT_BACKUP4_IMG = "gpt_backup4.bin"
+GPT_BACKUP5_IMG = "gpt_backup5.bin"
+XBL_IMG = "xbl.elf"
+RPM_IMG = "rpm.mbn"
+TZ_IMG = "tz.mbn"
+HYP_IMG = "hyp.mbn"
+PMIC_IMG = "pmic.elf"
+KEY_MASTER_IMG = "keymaster.mbn"
+CMNLIB_IMG = "cmnlib.mbn"
+CMNLIB64_IMG = "cmnlib64.mbn"
+DEVCFG_IMG = "devcfg.mbn"
+BOOTLOADER_COMMERCIAL_IMG0 = "abl.elf"
+BOOTLOADER_COMMERCIAL_IMG1 = "xbl.elf"
+BOOTLOADER_SERVICE_IMG0 = "NB1-0-488B-00WW-abl_service.elf"
+BOOTLOADER_SERVICE_ZIP0 = "NB1-0-488B-00WW-abl_service.zip"
+BOOTLOADER_SERVICE_IMG1 = "NB1-0-488B-xbl_service.elf"
+BOOTLOADER_SERVICE_ZIP1 = "NB1-0-488B-xbl_service.zip"
+
+[Package Info 1]
+PACKAGE_NAME = "oem dm-veracity"
+BOOT_NAME = "oem dm-veracity"
+OPTION = 0x1000000000000004
+IMAGE_FILE = ""
+
+[Package Info 2]
+PACKAGE_NAME = "partition:0"
+BOOT_NAME = "partition:0"
+OPTION = 0x2
+IMAGE_FILE = "gpt_both0.bin"
+
+[Package Info 3]
+PACKAGE_NAME = "partition:1"
+BOOT_NAME = "partition:1"
+OPTION = 0x2
+IMAGE_FILE = "gpt_both1.bin"
+
+[Package Info 4]
+PACKAGE_NAME = "partition:2"
+BOOT_NAME = "partition:2"
+OPTION = 0x2
+IMAGE_FILE = "gpt_both2.bin"
+
+[Package Info 5]
+PACKAGE_NAME = "partition:3"
+BOOT_NAME = "partition:3"
+OPTION = 0x2
+IMAGE_FILE = "gpt_both3.bin"
+
+[Package Info 6]
+PACKAGE_NAME = "partition:4"
+BOOT_NAME = "partition:4"
+OPTION = 0x2
+IMAGE_FILE = "gpt_both4.bin"
+
+[Package Info 7]
+PACKAGE_NAME = "partition:5"
+BOOT_NAME = "partition:5"
+OPTION = 0x2
+IMAGE_FILE = "gpt_both5.bin"
+
+[Package Info 8]
+PACKAGE_NAME = "tz_a"
+BOOT_NAME = "tz_a"
+OPTION = 0x2
+IMAGE_FILE = "tz.mbn"
+
+[Package Info 9]
+PACKAGE_NAME = "tz_b"
+BOOT_NAME = "tz_b"
+OPTION = 0x2
+IMAGE_FILE = "tz.mbn"
+
+[Package Info 10]
+PACKAGE_NAME = "rpm_a"
+BOOT_NAME = "rpm_a"
+OPTION = 0x2
+IMAGE_FILE = "rpm.mbn"
+
+[Package Info 11]
+PACKAGE_NAME = "rpm_b"
+BOOT_NAME = "rpm_b"
+OPTION = 0x2
+IMAGE_FILE = "rpm.mbn"
+
+[Package Info 12]
+PACKAGE_NAME = "hyp_a"
+BOOT_NAME = "hyp_a"
+OPTION = 0x2
+IMAGE_FILE = "hyp.mbn"
+
+[Package Info 13]
+PACKAGE_NAME = "hyp_b"
+BOOT_NAME = "hyp_b"
+OPTION = 0x2
+IMAGE_FILE = "hyp.mbn"
+
+[Package Info 14]
+PACKAGE_NAME = "pmic_a"
+BOOT_NAME = "pmic_a"
+OPTION = 0x2
+IMAGE_FILE = "pmic.elf"
+
+[Package Info 15]
+PACKAGE_NAME = "pmic_b"
+BOOT_NAME = "pmic_b"
+OPTION = 0x2
+IMAGE_FILE = "pmic.elf"
+
+[Package Info 16]
+PACKAGE_NAME = "keymaster_a"
+BOOT_NAME = "keymaster_a"
+OPTION = 0x2
+IMAGE_FILE = "keymaster.mbn"
+
+[Package Info 17]
+PACKAGE_NAME = "keymaster_b"
+BOOT_NAME = "keymaster_b"
+OPTION = 0x2
+IMAGE_FILE = "keymaster.mbn"
+
+[Package Info 18]
+PACKAGE_NAME = "cmnlib_a"
+BOOT_NAME = "cmnlib_a"
+OPTION = 0x2
+IMAGE_FILE = "cmnlib.mbn"
+
+[Package Info 19]
+PACKAGE_NAME = "cmnlib_b"
+BOOT_NAME = "cmnlib_b"
+OPTION = 0x2
+IMAGE_FILE = "cmnlib.mbn"
+
+[Package Info 20]
+PACKAGE_NAME = "cmnlib64_a"
+BOOT_NAME = "cmnlib64_a"
+OPTION = 0x2
+IMAGE_FILE = "cmnlib64.mbn"
+
+[Package Info 21]
+PACKAGE_NAME = "cmnlib64_b"
+BOOT_NAME = "cmnlib64_b"
+OPTION = 0x2
+IMAGE_FILE = "cmnlib64.mbn"
+
+[Package Info 22]
+PACKAGE_NAME = "devcfg_a"
+BOOT_NAME = "devcfg_a"
+OPTION = 0x2
+IMAGE_FILE = "devcfg.mbn"
+
+[Package Info 23]
+PACKAGE_NAME = "devcfg_b"
+BOOT_NAME = "devcfg_b"
+OPTION = 0x2
+IMAGE_FILE = "devcfg.mbn"
+
+[Package Info 24]
+PACKAGE_NAME = "abl_a"
+BOOT_NAME = "abl_a"
+OPTION = 0x100000
+IMAGE_FILE = "NB1-0-488B-00WW-abl_service.elf"
+
+[Package Info 25]
+PACKAGE_NAME = "abl_a"
+BOOT_NAME = "abl_a"
+OPTION = 0x200000
+IMAGE_FILE = "NB1-0-488B-00WW-abl_service.zip"
+
+[Package Info 26]
+PACKAGE_NAME = "abl_b"
+BOOT_NAME = "abl_b"
+OPTION = 0x100000
+IMAGE_FILE = "NB1-0-488B-00WW-abl_service.elf"
+
+[Package Info 27]
+PACKAGE_NAME = "abl_b"
+BOOT_NAME = "abl_b"
+OPTION = 0x200000
+IMAGE_FILE = "NB1-0-488B-00WW-abl_service.zip"
+
+[Package Info 28]
+PACKAGE_NAME = "xbl_a"
+BOOT_NAME = "xbl_a"
+OPTION = 0x100000
+IMAGE_FILE = "NB1-0-488B-xbl_service.elf"
+
+[Package Info 29]
+PACKAGE_NAME = "xbl_a"
+BOOT_NAME = "xbl_a"
+OPTION = 0x200000
+IMAGE_FILE = "NB1-0-488B-xbl_service.zip"
+
+[Package Info 30]
+PACKAGE_NAME = "xbl_b"
+BOOT_NAME = "xbl_b"
+OPTION = 0x100000
+IMAGE_FILE = "NB1-0-488B-xbl_service.elf"
+
+[Package Info 31]
+PACKAGE_NAME = "xbl_b"
+BOOT_NAME = "xbl_b"
+OPTION = 0x200000
+IMAGE_FILE = "NB1-0-488B-xbl_service.zip"
+
+[Package Info 32]
+PACKAGE_NAME = "systeminfo_a"
+BOOT_NAME = "systeminfo_a"
+OPTION = 0x2
+IMAGE_FILE = "systeminfo.img"
+
+[Package Info 33]
+PACKAGE_NAME = "systeminfo_b"
+BOOT_NAME = "systeminfo_b"
+OPTION = 0x2
+IMAGE_FILE = "systeminfo.img"
+
+[Package Info 34]
+PACKAGE_NAME = "reboot-bootloader"
+BOOT_NAME = "reboot-bootloader"
+OPTION = 0x1000000000000000
+IMAGE_FILE = ""
+
+[Package Info 35]
+PACKAGE_NAME = "oem dm-veracity"
+BOOT_NAME = "oem dm-veracity"
+OPTION = 0x1000000000000004
+IMAGE_FILE = ""
+
+[Package Info 36]
+PACKAGE_NAME = "system_a"
+BOOT_NAME = "system_a"
+OPTION = 0x40000
+IMAGE_FILE = "system.img"
+
+[Package Info 37]
+PACKAGE_NAME = "system_b"
+BOOT_NAME = "system_b"
+OPTION = 0x40000
+IMAGE_FILE = "system.img"
+
+[Package Info 38]
+PACKAGE_NAME = "vendor_a"
+BOOT_NAME = "vendor_a"
+OPTION = 0x40000
+IMAGE_FILE = "vendor.img"
+
+[Package Info 39]
+PACKAGE_NAME = "vendor_b"
+BOOT_NAME = "vendor_b"
+OPTION = 0x40000
+IMAGE_FILE = "vendor.img"
+
+[Package Info 40]
+PACKAGE_NAME = "persist"
+BOOT_NAME = "persist"
+OPTION = 0x2
+IMAGE_FILE = "persist.img"
+
+[Package Info 41]
+PACKAGE_NAME = "modem_a"
+BOOT_NAME = "modem_a"
+OPTION = 0x2
+IMAGE_FILE = "NON-HLOS.bin"
+
+[Package Info 42]
+PACKAGE_NAME = "modem_b"
+BOOT_NAME = "modem_b"
+OPTION = 0x2
+IMAGE_FILE = "NON-HLOS.bin"
+
+[Package Info 43]
+PACKAGE_NAME = "dsp_a"
+BOOT_NAME = "dsp_a"
+OPTION = 0x2
+IMAGE_FILE = "adspso.bin"
+
+[Package Info 44]
+PACKAGE_NAME = "dsp_b"
+BOOT_NAME = "dsp_b"
+OPTION = 0x2
+IMAGE_FILE = "adspso.bin"
+
+[Package Info 45]
+PACKAGE_NAME = "boot_a"
+BOOT_NAME = "boot_a"
+OPTION = 0x2
+IMAGE_FILE = "boot.img"
+
+[Package Info 46]
+PACKAGE_NAME = "boot_b"
+BOOT_NAME = "boot_b"
+OPTION = 0x2
+IMAGE_FILE = "boot.img"
+
+[Package Info 47]
+PACKAGE_NAME = "bluetooth_a"
+BOOT_NAME = "bluetooth_a"
+OPTION = 0x2
+IMAGE_FILE = "BTFM.bin"
+
+[Package Info 48]
+PACKAGE_NAME = "bluetooth_b"
+BOOT_NAME = "bluetooth_b"
+OPTION = 0x2
+IMAGE_FILE = "BTFM.bin"
+
+[Package Info 49]
+PACKAGE_NAME = "mdtp_a"
+BOOT_NAME = "mdtp_a"
+OPTION = 0x2
+IMAGE_FILE = "mdtp.img"
+
+[Package Info 50]
+PACKAGE_NAME = "mdtp_b"
+BOOT_NAME = "mdtp_b"
+OPTION = 0x2
+IMAGE_FILE = "mdtp.img"
+
+[Package Info 51]
+PACKAGE_NAME = "logfs"
+BOOT_NAME = "logfs"
+OPTION = 0x2
+IMAGE_FILE = "logfs_ufs_8mb.bin"
+
+[Package Info 52]
+PACKAGE_NAME = "nvdef_a"
+BOOT_NAME = "nvdef_a"
+OPTION = 0x2
+IMAGE_FILE = "NV-default.mbn"
+
+[Package Info 53]
+PACKAGE_NAME = "nvdef_b"
+BOOT_NAME = "nvdef_b"
+OPTION = 0x2
+IMAGE_FILE = "NV-default.mbn"
+
+[Package Info 54]
+PACKAGE_NAME = "userdata"
+BOOT_NAME = "userdata"
+OPTION = 0x8
+IMAGE_FILE = ""
+
+[Package Info 55]
+PACKAGE_NAME = "cda_a"
+BOOT_NAME = "cda_a"
+OPTION = 0x2
+IMAGE_FILE = "cda.img"
+
+[Package Info 56]
+PACKAGE_NAME = "cda_b"
+BOOT_NAME = "cda_b"
+OPTION = 0x2
+IMAGE_FILE = "cda.img"
+
+[Package Info 57]
+PACKAGE_NAME = "hidden_a"
+BOOT_NAME = "hidden_a"
+OPTION = 0x2
+IMAGE_FILE = "hidden.img.ext4"
+
+[Package Info 58]
+PACKAGE_NAME = "hidden_b"
+BOOT_NAME = "hidden_b"
+OPTION = 0x2
+IMAGE_FILE = "hidden.img.ext4"
+
+[Package Info 59]
+PACKAGE_NAME = "sutinfo"
+BOOT_NAME = "sutinfo"
+OPTION = 0x2
+IMAGE_FILE = "sutinfo.img"
+
+[Package Info 60]
+PACKAGE_NAME = "splash_a"
+BOOT_NAME = "splash_a"
+OPTION = 0x2
+IMAGE_FILE = "splash.img"
+
+[Package Info 61]
+PACKAGE_NAME = "splash_b"
+BOOT_NAME = "splash_b"
+OPTION = 0x2
+IMAGE_FILE = "splash.img"
+
+[Package Info 62]
+PACKAGE_NAME = "splash2"
+BOOT_NAME = "splash2"
+OPTION = 0x2
+IMAGE_FILE = "splash2.img"
+
+[Package Info 63]
+PACKAGE_NAME = "mdtpsecapp_a"
+BOOT_NAME = "mdtpsecapp_a"
+OPTION = 0x2
+IMAGE_FILE = "mdtpsecapp.mbn"
+
+[Package Info 64]
+PACKAGE_NAME = "mdtpsecapp_b"
+BOOT_NAME = "mdtpsecapp_b"
+OPTION = 0x2
+IMAGE_FILE = "mdtpsecapp.mbn"
+
+[Package Info 65]
+PACKAGE_NAME = "storsec"
+BOOT_NAME = "storsec"
+OPTION = 0x2
+IMAGE_FILE = "storsec.mbn"
+
+[Package Info 66]
+PACKAGE_NAME = "abl_a"
+BOOT_NAME = "abl_a"
+OPTION = 0x2
+IMAGE_FILE = "abl.elf"
+
+[Package Info 67]
+PACKAGE_NAME = "abl_b"
+BOOT_NAME = "abl_b"
+OPTION = 0x2
+IMAGE_FILE = "abl.elf"
+
+[Package Info 68]
+PACKAGE_NAME = "xbl_a"
+BOOT_NAME = "xbl_a"
+OPTION = 0x2
+IMAGE_FILE = "xbl.elf"
+
+[Package Info 69]
+PACKAGE_NAME = "xbl_b"
+BOOT_NAME = "xbl_b"
+OPTION = 0x2
+IMAGE_FILE = "xbl.elf"
+
+[Package Info 70]
+PACKAGE_NAME = "cda"
+BOOT_NAME = "cda"
+OPTION = 0x1
+IMAGE_FILE = ""
+
+[Package Info 71]
+PACKAGE_NAME = "KEY_INFO"
+BOOT_NAME = "KEY_INFO"
+OPTION = 0x1
+IMAGE_FILE = "keyinfo.img"
+
+[Package Info 72]
+PACKAGE_NAME = "oem set_active _a"
+BOOT_NAME = "oem set_active _a"
+OPTION = 0x1000000000000000
+IMAGE_FILE = ""
+
+[Package Info 73]
+PACKAGE_NAME = "oem enable-charger-screen"
+BOOT_NAME = "oem enable-charger-screen"
+OPTION = 0x1000000000000000
+IMAGE_FILE = ""
+
