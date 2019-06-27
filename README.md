@@ -27,12 +27,12 @@ And I have reason to believe that data decryption is broken anyways.
 * Bluetooth
 * Sound
 * Vibration
+* Calling
 
 ### What doesn't work, or isn't tested
 * Camera (broke, needs blobs)
 * HW buttons / Fingerprint (same reason)
 * VoLTE (untested)
-* Calling (to be tested under Pie Vendor)
 * Sensors (I suck at android and have no idea how to test that properly)
 
 ### Download?
