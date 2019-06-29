@@ -35,6 +35,7 @@ And I have reason to believe that data decryption is broken anyways.
 
 ### What doesn't work, or isn't tested
 * Only the fingerprint sensor has haptic feedback
+* The fingerprint UI thinks the sensor is on the back of the phone.
 * VoLTE (untested)
 * Sensors (They probably work, but I didn't do a full test yet)
 
