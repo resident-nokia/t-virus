@@ -1,0 +1,2 @@
+/lib64/hw/gxfingerprint.default.so      s|/system/etc/firmware|/vendor/etc/firmware|g
+/etc/init/hw/init.nb1.fingerprint.rc    s|service gx_fpd /vendor/bin/gx_fpd|service fqcfingerprint /vendor/bin/fqcfingerprint|g

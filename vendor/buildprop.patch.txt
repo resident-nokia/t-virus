@@ -1,0 +1,1 @@
+/build.prop         s|qemu.hw.mainkeys=0|qemu.hw.mainkeys=1\nro.boot.gxfp_lv=true\nsys.gxfp.lv=1|g

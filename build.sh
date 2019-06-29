@@ -56,6 +56,54 @@ unpackSplit vendor
 unpackSplit boot
 unpackSplit system
 
+mountSparse() {
+    mkdir -p $2
+    $DIR/bin/simg2img $1 $2.img
+    sudo mount -o rw $2.img $2
+}
+
+# We need to patch vendor for better NB1 support. Mount the original
+# system image to copy over files
+VENDOR=$(ls $DIR/data | grep vendor.img)
+SYSTEM=$(ls $FIRMWARE | grep system.img)
+
+mountSparse $DIR/data/$VENDOR $DIR/tmp/vendor
+mountSparse $FIRMWARE/$SYSTEM $DIR/tmp/system
+
+# Copy blobs
+IFS=$'\n'
+for line in $(cat $DIR/vendor/*.copy.txt)
+do
+    line=$(echo $line | sed 's/\t/ /g' | sed 's/  */ /g')
+    from=$(echo $line | cut -d' ' -f1)
+    to=$(echo $line | cut -d' ' -f2)
+
+    sudo cp -a $DIR/tmp/system/$from $DIR/tmp/vendor/$to
+done
+
+for line in $(cat $DIR/vendor/*.selinux.txt)
+do
+    line=$(echo $line | sed 's/\t/ /g' | sed 's/  */ /g')
+    file=$(echo $line | cut -d' ' -f1)
+    selinux=$(echo $line | cut -d' ' -f2)
+
+    sudo setfattr -n security.selinux -v "$selinux" $DIR/tmp/vendor/$file
+done
+
+# Patch files
+for line in $(cat $DIR/vendor/*.patch.txt | sed 's/\\n/{NL}/g')
+do
+    file=$(echo $line | cut -d' ' -f1)
+    sed=$(echo ${line#"$file"} | xargs | sed 's/{NL}/\\n/g')
+
+    sudo sed -i "$sed" $DIR/tmp/vendor/$file
+done
+unset IFS
+sudo umount $DIR/tmp/system
+sudo umount $DIR/tmp/vendor
+$DIR/bin/img2simg $DIR/tmp/vendor.img $DIR/data/$VENDOR
+sudo rm -r $DIR/tmp
+
 # Use the main partition table from sirocco
 getImage "A1N" "gpt_both0.bin"
 getImage "A1N" "gpt_main0.bin"

@@ -28,12 +28,23 @@ And I have reason to believe that data decryption is broken anyways.
 * Sound
 * Vibration
 * Calling
+* Hardware buttons
+* Fingerprint
+* Camera
+* GPS
 
 ### What doesn't work, or isn't tested
-* Camera (broke, needs blobs)
-* HW buttons / Fingerprint (same reason)
+* Only the fingerprint sensor has haptic feedback
 * VoLTE (untested)
-* Sensors (I suck at android and have no idea how to test that properly)
+* Sensors (They probably work, but I didn't do a full test yet)
+
+### SELinux hell
+Because Android does some very weird stuff with SELinux contexts, you cannot
+launch a service file when it has an unknown context. We have to fix that by
+force-setting the SELinux context manually, but due to how SELinux works, this
+is only possible on a Linux system **without** SELinux. This means, that you
+cannot build this on a distribution with SELinux (Fedora in my case). I
+fixed the problem by building the images in a Ubuntu VM.
 
 ### Download?
 **WARNING:** This is not useable as a daily driver. Continue only if you are 

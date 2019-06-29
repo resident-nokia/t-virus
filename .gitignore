@@ -8,3 +8,6 @@ data/*system.img
 
 # Generated image
 out/
+tmp/
+vendor/root/
+*.qlz

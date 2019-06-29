@@ -1,0 +1,1 @@
+/bin/fqcfingerprint     u:object_r:fqcfingerprint_exec:s0

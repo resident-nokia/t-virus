@@ -1,0 +1,12 @@
+/system/vendor/etc/init/hw/init.nb1.battery.rc              /etc/init/hw
+/system/vendor/etc/init/hw/init.nb1.fingerprint.rc          /etc/init/hw
+/system/vendor/etc/init/hw/init.nb1.poweroff_charging.rc    /etc/init/hw
+/system/vendor/etc/init/hw/init.nb1.target.rc               /etc/init/hw
+/system/vendor/etc/init/hw/init.nb1.camera.rc               /etc/init/hw
+/system/vendor/etc/init/hw/init.nb1.lcm.rc                  /etc/init/hw
+/system/vendor/etc/init/hw/init.nb1.sd.rc                   /etc/init/hw
+/system/vendor/etc/init/hw/init.nb1.touch.rc                /etc/init/hw
+/system/vendor/etc/init/hw/init.nb1.dbg.rc                  /etc/init/hw
+/system/vendor/etc/init/hw/init.nb1.led.rc                  /etc/init/hw
+/system/vendor/etc/init/hw/init.nb1.smartamp.rc             /etc/init/hw
+/system/vendor/etc/init/hw/init.nb1.wbg.rc                  /etc/init/hw
