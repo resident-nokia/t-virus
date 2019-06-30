@@ -34,6 +34,7 @@ And I have reason to believe that data decryption is broken anyways.
 * GPS
 
 ### What doesn't work, or isn't tested
+* The second SIM slot doesn't work
 * Only the fingerprint sensor has haptic feedback
 * The fingerprint UI thinks the sensor is on the back of the phone.
 * VoLTE (untested)
