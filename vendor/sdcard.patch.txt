@@ -1,1 +1,1 @@
-/system/etc/fstab.qcom  s|#/dev/block/zram0|/devices/soc/c0a4900.sdhci/mmc_host*  /storage/sdcard1  vfat  nosuid,nodev  wait,voldmanaged=sdcard1:auto\n#/dev/block/zram0|g
+/etc/fstab.qcom  s|#/dev/block/zram0|/devices/soc/c0a4900.sdhci/mmc_host*  /storage/sdcard1  vfat  nosuid,nodev  wait,voldmanaged=sdcard1:auto\n#/dev/block/zram0|g
