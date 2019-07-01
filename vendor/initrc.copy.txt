@@ -10,3 +10,12 @@
 /system/vendor/etc/init/hw/init.nb1.led.rc                  /etc/init/hw
 /system/vendor/etc/init/hw/init.nb1.smartamp.rc             /etc/init/hw
 /system/vendor/etc/init/hw/init.nb1.wbg.rc                  /etc/init/hw
+/system/vendor/etc/init/hw/init.qcom.cda.rc                 /etc/init/hw
+/system/etc/init/hw/init.sku.600ID.B1C.2.rc                 /etc/init/hw
+/system/etc/init/hw/init.sku.600ID.NB1.1.rc                 /etc/init/hw
+/system/etc/init/hw/init.sku.600ID.NB1.2.rc                 /etc/init/hw
+/system/etc/init/hw/init.sku.600ID.rc                       /etc/init/hw
+/system/etc/init/hw/init.sku.600WW.B1C.2.rc                 /etc/init/hw
+/system/etc/init/hw/init.sku.600WW.NB1.1.rc                 /etc/init/hw
+/system/etc/init/hw/init.sku.600WW.NB1.2.rc                 /etc/init/hw
+/system/etc/init/hw/init.sku.rc                             /etc/init/hw

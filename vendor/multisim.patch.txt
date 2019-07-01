@@ -1,0 +1,21 @@
+/etc/vintf/manifest.xml     s|<instance>slot1</instance>|<instance>slot1</instance><instance>slot2</instance>|g
+/etc/vintf/manifest.xml     s|<instance>SIM1</instance>|<instance>SIM1</instance><instance>SIM2</instance>|g
+/etc/vintf/manifest.xml     s|<fqname>@1.1::IRadio/slot1</fqname>|<fqname>@1.1::IRadio/slot1</fqname><fqname>@1.1::IRadio/slot2</fqname>|g
+/etc/vintf/manifest.xml     s|<fqname>@1.1::ISap/slot1</fqname>|<fqname>@1.1::ISap/slot1</fqname><fqname>@1.1::ISap/slot2</fqname>|g
+/etc/vintf/manifest.xml     s|<fqname>@1.0::IQcRilAudio/slot1</fqname>|<fqname>@1.0::IQcRilAudio/slot1</fqname><fqname>@1.0::IQcRilAudio/slot2</fqname>|g
+/etc/vintf/manifest.xml     s|<fqname>@1.0::IQtiRadio/slot1</fqname>|<fqname>@1.0::IQtiRadio/slot1</fqname><fqname>@1.0::IQtiRadio/slot2</fqname>|g
+/etc/vintf/manifest.xml     s|<fqname>@1.0::ISecureElement/SIM1</fqname>|<fqname>@1.0::ISecureElement/SIM1</fqname><fqname>@1.0::ISecureElement/SIM2</fqname>|g
+/build.prop                 s|persist.radio.multisim.config=ssss|ptr=!|g
+/build.prop                 s|ptr=!|persist.radio.oem_socket=true \nptr=!|g
+/build.prop                 s|ptr=!|persist.radio.flexmap_type=nw_mode \nptr=!|g
+/build.prop                 s|ptr=!|persist.radio.adb_log_on=3 \nptr=!|g
+/build.prop                 s|ptr=!|persist.radio.process_sups_ind=1 \nptr=!|g
+/build.prop                 s|ptr=!|persist.vendor.radio.lte_vrte_ltd=1 \nptr=!|g
+/build.prop                 s|ptr=!|persist.radio.multisim.config=dsds \nptr=!|g
+/build.prop                 s|ptr=!|persist.vendor.radio.apm_sim_not_pwdn=1 \nptr=!|g
+/build.prop                 s|ptr=!|persist.vendor.radio.sib16_support=1 \nptr=!|g
+/build.prop                 s|ptr=!|persist.vendor.radio.custom_ecc=1 \nptr=!|g
+/build.prop                 s|ptr=!|persist.vendor.radio.rat_on=combine \nptr=!|g
+/build.prop                 s|ptr=!|ro.telephony.default_network=22 \nptr=!|g
+/build.prop                 s|ptr=!|ro.telephony.default_network=22,20 \nptr=!|g
+/build.prop                 s|ptr=!||g
