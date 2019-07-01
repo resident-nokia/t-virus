@@ -36,9 +36,9 @@ boot image also includes a TWRP build that has support for Project Treble.
 * GPS
 * NFC
 * SDCard
+* Multi SIM
 
 ### What doesn't work, or isn't tested
-* The second SIM slot
 * Haptic feedback for Hardware buttons
 * Fingerprint sensor is reported as being on the back of the phone
 * VoLTE (untested)
