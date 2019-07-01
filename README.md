@@ -64,6 +64,9 @@ firmware, so you will have to flash it through NOST. **You will need a completel
 bootloader.** When flashing, make sure to select the "Erase Userdata" option,
 not doing this will most certainly bootloop the phone.
 
+To update to a newer version without having to erase userdata, download the 
+zipped vendor image from the release page, and flash the image inside in TWRP.
+
 If you want to go back to stock, simply download the latest firmware from https://bit.ly/nokia-nb1
 and flash it with NOST. It will revert all changes t-virus made to your phone.
 
