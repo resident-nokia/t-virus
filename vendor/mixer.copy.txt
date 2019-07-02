@@ -1,0 +1,7 @@
+/system/vendor/etc/mixer_paths_dtp.xml              /etc
+/system/vendor/etc/mixer_paths_i2s.xml              /etc
+/system/vendor/etc/mixer_paths_qvr.xml              /etc
+/system/vendor/etc/mixer_paths_skuk.xml             /etc
+/system/vendor/etc/mixer_paths_tasha.xml            /etc
+/system/vendor/etc/mixer_paths_tavil.xml            /etc
+/system/vendor/etc/mixer_paths.xml                  /etc
