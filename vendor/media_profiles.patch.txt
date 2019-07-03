@@ -1,0 +1,10 @@
+/etc/media_profiles_vendor.xml      BEGIN{undef $/;} s|<EncoderProfile quality=.qhd.*?>.*?<\/EncoderProfile>||sgm
+/etc/media_profiles_vendor.xml      BEGIN{undef $/;} s|<EncoderProfile quality=.2k.*?>.*?<\/EncoderProfile>||sgm
+/etc/media_profiles_vendor.xml      BEGIN{undef $/;} s|<EncoderProfile quality=.4kdci.*?>.*?<\/EncoderProfile>||sgm
+/etc/media_profiles_vendor.xml      BEGIN{undef $/;} s|<EncoderProfile quality=.vga.*?>.*?<\/EncoderProfile>||sgm
+/etc/media_profiles_vendor.xml      BEGIN{undef $/;} s|<EncoderProfile quality=.timelapseqhd.*?>.*?<\/EncoderProfile>||sgm
+/etc/media_profiles_vendor.xml      BEGIN{undef $/;} s|<EncoderProfile quality=.timelapse2k.*?>.*?<\/EncoderProfile>||sgm
+/etc/media_profiles_vendor.xml      BEGIN{undef $/;} s|<EncoderProfile quality=.timelapse4kdci.*?>.*?<\/EncoderProfile>||sgm
+/etc/media_profiles_vendor.xml      BEGIN{undef $/;} s|<EncoderProfile quality=.timelapsevga.*?>.*?<\/EncoderProfile>||sgm
+/etc/media_profiles_vendor.xml      BEGIN{undef $/;} s|<AudioEncoderCap name=.lpcm.*?>||sgm
+/build.prop                         s|#media.settings.xml|media.settings.xml|g

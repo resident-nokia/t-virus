@@ -96,7 +96,7 @@ do
     file=$(echo $line | cut -d' ' -f1)
     sed=$(echo ${line#"$file"} | xargs | sed 's/{NL}/\\n/g')
 
-    sudo sed -i "$sed" $DIR/tmp/vendor/$file
+    sudo perl -pe "$sed" -i $DIR/tmp/vendor/$file
 done
 unset IFS
 sudo umount $DIR/tmp/system
