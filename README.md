@@ -69,13 +69,12 @@ When the script has finished the flashable firmware image will be inside of the
 * NFC
 * SDCard
 * Multi SIM
+* 4k Video
 
 ### What doesn't work, or isn't tested
 * Haptic feedback for Hardware buttons
 * Bluetooth headphones don't get registered properly
 * Nokia OZO audio support is missing
-* 4K video support is missing
-* There are various issues with audio during calls
 * Fingerprint sensor is reported as being on the back of the phone
 * VoLTE (untested)
 
@@ -83,11 +82,6 @@ When the script has finished the flashable firmware image will be inside of the
 **WARNING:** This is not useable as a daily driver. Continue only if you are 
 able to troubleshoot things if neccessary (bootloops, bricking the phone, 
 causing the alarm app to declare nuclear war)
-
-**WARNING:** There are currently some issues with reverting to stock. The system
-boots but gets stuck at the bootlogo. To work around this, backup your `box`
-partition before flashing T-Virus, and reflash it after you flashed the stock 
-firmware.
 
 You can download the latest release from the releases page. It is a .qlz
 firmware, so you will have to flash it through NOST. **You will need a completely 
@@ -108,9 +102,11 @@ If you want to use a different GSI (you most likely will), follow these steps:
 To update to a newer version without having to erase userdata, download the 
 zipped vendor image from the release page, and flash the image inside in TWRP.
 
-If you want to go back to stock, simply download the latest firmware from 
-https://bit.ly/nokia-nb1 and flash it with NOST. It will revert all changes 
-T-Virus made to your phone.
+If you want to go back to stock, simply download the 
+[5150-revert](https://github.com/resident-nokia/t-virus/releases/tag/5150-revert) 
+firmware and flash it with NOST, with the "Erase Userdata" option enabled. 
+It will revert all changes T-Virus made to your phone. **Firmwares from 
+https://bit.ly/nokia-nb1 will not work.** 
 
 ### License
 Go nuts. I really don't care what you do with this.
