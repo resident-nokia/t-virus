@@ -1,4 +1,4 @@
-From 8cca5b3d31aca9d544612ea2126ce5dfd90cf4cd Mon Sep 17 00:00:00 2001
+From 86cd77e06c3695ffabfc430ab50b363c3b77330d Mon Sep 17 00:00:00 2001
 From: Dorian Stoll <dorian.stoll@tmsp.io>
 Date: Wed, 26 Jun 2019 23:07:33 +0200
 Subject: [PATCH] Enable early mounting of vendor, for Treble support
@@ -7,7 +7,8 @@ Signed-off-by: Dorian Stoll <dorian.stoll@tmsp.io>
 ---
  .../dts/fih/NB1_common/fih_memmap_nb1_evb.dtsi  | 17 +++++++++++++++++
  arch/arm64/configs/nb1_defconfig                |  2 +-
- 2 files changed, 18 insertions(+), 1 deletion(-)
+ umbrella/template/anykernel.sh                  |  2 +-
+ 3 files changed, 19 insertions(+), 2 deletions(-)
 
 diff --git a/arch/arm64/boot/dts/fih/NB1_common/fih_memmap_nb1_evb.dtsi b/arch/arm64/boot/dts/fih/NB1_common/fih_memmap_nb1_evb.dtsi
 index 832482a46b5a..2e001be808b5 100644
@@ -50,6 +51,19 @@ index 22f0759fc9db..007779b27cd8 100755
  # CONFIG_LOCALVERSION_AUTO is not set
  CONFIG_DEFAULT_HOSTNAME="(none)"
  CONFIG_SWAP=y
+diff --git a/umbrella/template/anykernel.sh b/umbrella/template/anykernel.sh
+index bccb8daeb590..0aaba3998a25 100755
+--- a/umbrella/template/anykernel.sh
++++ b/umbrella/template/anykernel.sh
+@@ -9,7 +9,7 @@ do.devicecheck=1
+ do.modules=0
+ do.cleanup=1
+ do.cleanuponabort=0
+-device.name1={DEVICE}
++device.name1={DEVICE}_Treble
+ '; } # end properties
+ 
+ # shell variables
 -- 
 2.21.0
 
