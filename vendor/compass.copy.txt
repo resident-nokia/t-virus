@@ -1,0 +1,5 @@
+/system/vendor/etc/sensors/sensor_def_qcomdev.conf                                               /bin
+/system/vendor/lib/sensor_calibrate.so                                                           /lib
+/system/vendor/lib64/sensor_calibrate.so                                                         /lib64
+/system/vendor/lib/sensors.ssc.so                                                                /lib
+/system/vendor/lib64/sensors.ssc.so                                                              /lib64
