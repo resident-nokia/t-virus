@@ -1,18 +1,18 @@
 # T-Virus
 T-Virus (for treble-virus) is a tool that takes a stock Nokia 8 firmware
-and "infects" it with various parts from the Nokia 8 Sirocco firmware, generating 
-a firmware bundle that is compilant with Project Treble and can be flashed to a 
+and "infects" it with various parts from the Nokia 8 Sirocco firmware, generating
+a firmware bundle that is compilant with Project Treble and can be flashed to a
 Nokia 8 using NOST.
 
 ### Firmware sources
 The base of T-Virus is the stock Nokia 8 firmware image (5150 at the time of
-writing). When being run, the build script takes those files and replaces the 
+writing). When being run, the build script takes those files and replaces the
 partition table with the one from Nokia 8 Sirocco. This required for creating
 a vendor partition that the stock Nokia 8 does not have. The vendor image is taken
 from the Sirocco firmware as well. During the build, the vendor image is mounted
 as rw, and various files are copied over from the stock Nokia 8 system image, or
 get patched to properly support the minor hardware differences between the two
-phones. Those actions are defined through very basic scripts inside of the 
+phones. Those actions are defined through very basic scripts inside of the
 `vendor` folder in this repository.
 
 The boot image is a [modified](https://github.com/resident-nokia/umbrella/tree/treble)
@@ -28,8 +28,8 @@ cannot build this on a distribution with SELinux (Fedora in my case). I
 fixed the problem by building the images in a Ubuntu VM.
 
 ### How to build?
-First you have to download the latest firmware image from 
-https://bit.ly/nokia-nb1, and the exdupe tool from https://www.quicklz.com/exdupe
+First you have to download the latest firmware image from
+https://tmsp.io/fs/xda/nb1, and the exdupe tool from https://www.quicklz.com/exdupe
 
 Extract the firmware into a folder and then clone this repository, like this:
 ```bash
@@ -79,13 +79,13 @@ When the script has finished the flashable firmware image will be inside of the
 * VoLTE (untested)
 
 ### Download?
-**WARNING:** This is not useable as a daily driver. Continue only if you are 
-able to troubleshoot things if neccessary (bootloops, bricking the phone, 
+**WARNING:** This is not useable as a daily driver. Continue only if you are
+able to troubleshoot things if neccessary (bootloops, bricking the phone,
 causing the alarm app to declare nuclear war)
 
 You can download the latest release from the releases page. It is a .qlz
-firmware, so you will have to flash it through NOST. **You will need a completely 
-unlocked bootloader.** When flashing, make sure to select the "Erase Userdata" 
+firmware, so you will have to flash it through NOST. **You will need a completely
+unlocked bootloader.** When flashing, make sure to select the "Erase Userdata"
 option, not doing this will most certainly bootloop the phone.
 
 After the installation completed, your phone will reboot into phh's AOSP GSI.
@@ -99,14 +99,14 @@ If you want to use a different GSI (you most likely will), follow these steps:
 * Then install OpenGApps or any other modifications you like.
 * Wipe /data to allow the new system image to boot properly and then reboot
 
-To update to a newer version without having to erase userdata, download the 
+To update to a newer version without having to erase userdata, download the
 zipped vendor image from the release page, and flash the image inside in TWRP.
 
-If you want to go back to stock, simply download the 
-[5150-revert](https://github.com/resident-nokia/t-virus/releases/tag/5150-revert) 
-firmware and flash it with NOST, with the "Erase Userdata" option enabled. 
-It will revert all changes T-Virus made to your phone. **Firmwares from 
-https://bit.ly/nokia-nb1 will not work.** 
+If you want to go back to stock, simply download the
+[5150-revert](https://github.com/resident-nokia/t-virus/releases/tag/5150-revert)
+firmware and flash it with NOST, with the "Erase Userdata" option enabled.
+It will revert all changes T-Virus made to your phone. **Firmwares from
+https://tmsp.io/fs/xda/nb1 will not work.**
 
 ### License
 Go nuts. I really don't care what you do with this.
