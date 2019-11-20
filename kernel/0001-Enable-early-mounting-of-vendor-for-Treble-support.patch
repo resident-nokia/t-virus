@@ -1,25 +1,23 @@
-From 86cd77e06c3695ffabfc430ab50b363c3b77330d Mon Sep 17 00:00:00 2001
+From 653a5c6fd5f90f3ff2aa2e0973816858b76ccabe Mon Sep 17 00:00:00 2001
 From: Dorian Stoll <dorian.stoll@tmsp.io>
-Date: Wed, 26 Jun 2019 23:07:33 +0200
+Date: Wed, 20 Nov 2019 16:43:09 +0100
 Subject: [PATCH] Enable early mounting of vendor, for Treble support
 
 Signed-off-by: Dorian Stoll <dorian.stoll@tmsp.io>
 ---
- .../dts/fih/NB1_common/fih_memmap_nb1_evb.dtsi  | 17 +++++++++++++++++
- arch/arm64/configs/nb1_defconfig                |  2 +-
- umbrella/template/anykernel.sh                  |  2 +-
- 3 files changed, 19 insertions(+), 2 deletions(-)
+ .../boot/dts/fih/NB1_common/fih_memmap_nb1_evb.dtsi  | 12 ++++++++++++
+ arch/arm64/configs/nb1_defconfig                     |  2 +-
+ umbrella/template/anykernel.sh                       |  2 +-
+ 3 files changed, 14 insertions(+), 2 deletions(-)
 
 diff --git a/arch/arm64/boot/dts/fih/NB1_common/fih_memmap_nb1_evb.dtsi b/arch/arm64/boot/dts/fih/NB1_common/fih_memmap_nb1_evb.dtsi
-index 832482a46b5a..2e001be808b5 100644
+index 1ada9d8eeb4e..09cf1b992da0 100644
 --- a/arch/arm64/boot/dts/fih/NB1_common/fih_memmap_nb1_evb.dtsi
 +++ b/arch/arm64/boot/dts/fih/NB1_common/fih_memmap_nb1_evb.dtsi
-@@ -1,6 +1,23 @@
- /* ref: msm8998.dtsi */
- 
- / {
-+	firmware: firmware {
-+		android {
+@@ -4,6 +4,18 @@
+ 	firmware: firmware {
+ 		android {
+ 			boot_devices = "soc/1da4000.ufshc";
 +			compatible = "android,firmware";
 +			fstab {
 +				compatible = "android,fstab";
@@ -32,14 +30,11 @@ index 832482a46b5a..2e001be808b5 100644
 +					status = "ok";
 +				};
 +			};
-+		};
-+	};
-+
- 	reserved-memory {
- 		fih_mem: fih_region@a0000000 { /* for FIH feature */
- 			compatible = "removed-dma-pool";
+ 		};
+ 	};
+ 
 diff --git a/arch/arm64/configs/nb1_defconfig b/arch/arm64/configs/nb1_defconfig
-index 22f0759fc9db..007779b27cd8 100755
+index 1f5de4bba785..a8bb9e848d54 100755
 --- a/arch/arm64/configs/nb1_defconfig
 +++ b/arch/arm64/configs/nb1_defconfig
 @@ -47,7 +47,7 @@ CONFIG_THREAD_INFO_IN_TASK=y
@@ -52,7 +47,7 @@ index 22f0759fc9db..007779b27cd8 100755
  CONFIG_DEFAULT_HOSTNAME="(none)"
  CONFIG_SWAP=y
 diff --git a/umbrella/template/anykernel.sh b/umbrella/template/anykernel.sh
-index bccb8daeb590..0aaba3998a25 100755
+index 7f4b164499a6..f9a216d0c57b 100755
 --- a/umbrella/template/anykernel.sh
 +++ b/umbrella/template/anykernel.sh
 @@ -9,7 +9,7 @@ do.devicecheck=1
@@ -65,5 +60,5 @@ index bccb8daeb590..0aaba3998a25 100755
  
  # shell variables
 -- 
-2.21.0
+2.23.0
 
