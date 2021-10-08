@@ -68,8 +68,6 @@ function check_if_dir_exists() {
 			*) echo "Your input should be one of the numbers in the list!"
 			esac
 		done
-
-		exit 1
 	fi
 }
 
