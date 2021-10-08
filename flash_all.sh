@@ -19,7 +19,7 @@ select opt in "Convert" "Revert"; do
         *)
         echo "Your input should be one of the numbers in the list!"
     esac
-    done
+done
 
 function flash_ab() {
     if ! "$fastboot" flash "$1_a" "$2"; then echo "Flash $1_a error"; exit 1; fi
@@ -47,15 +47,38 @@ function erase_ab() {
     if ! "$fastboot" erase "$1_b"; then echo "Erase $1_b error"; exit 1; fi
 }
 
+function check_if_dir_exists() {
+	if ! [ -d "$firmware/$1" ]
+	then
+		echo
+		echo "You need to download the firmware first."
+		echo "Would you like to download the firmware?"
+
+
+		select opt in "Yes" "No"; do
+			case $opt in
+			"Yes") _treble_download_dest=$dest "$PWD/download.sh" ;;
+			"No") exit 1 ;;
+			*) echo "Your input should be one of the numbers in the list!"
+			esac
+		done
+
+		exit 1
+	fi
+}
+
 echo "Repartitioning device..."
 erase misc "ERROR: Failed to modify partition table, please unlock the bootloader of your device!"
 
+
+check_if_dir_exists "$dest"
 if ! "$fastboot" "${@}" flash partition:0 "$firmware/$dest/gpt_both0.bin"; then
      echo "Flash main partition table error"
 
      exit 1
 fi
 
+check_if_dir_exists "common"
 flash_ab abl "$firmware/common/abl.img"
 flash_ab xbl "$firmware/common/xbl.img"
 
@@ -106,7 +129,7 @@ if [ "$dest" == "treble" ]; then
         erase_ab vendor
 
         # Flash the modified misc partition to boot into recovery
-        flash misc "$firmware/treble/misc.img"
+        flash misc "$firmware/$dest/misc.img"
     elif [ ${#options[@]} -gt 1 ]; then
 	    # Prompt for which zip if multiple found
         echo "Multiple ROM files detected. Please select which to use:"
@@ -139,18 +162,18 @@ if [ "$dest" == "treble" ]; then
         rm -r "$PWD/temp"
     fi
 else
-    flash_ab cda "$firmware/stock/cda.img"
+    flash_ab cda "$firmware/$dest/cda.img"
 
-    flash box "$firmware/stock/box.img"
-    flash elabel "$firmware/stock/elabel.img"
-    flash_ab hidden "$firmware/stock/hidden.img.ext4"
+    flash box "$firmware/$dest/box.img"
+    flash elabel "$firmware/$dest/elabel.img"
+    flash_ab hidden "$firmware/$dest/hidden.img.ext4"
 
-    flash logfs "$firmware/stock/logfs_ufs_8mb.bin"
-    flash storsec "$firmware/stock/storsec.mbn"
-    flash sutinfo "$firmware/stock/sutinfo.img"
+    flash logfs "$firmware/$dest/logfs_ufs_8mb.bin"
+    flash storsec "$firmware/$dest/storsec.mbn"
+    flash sutinfo "$firmware/$dest/sutinfo.img"
 
     # Flash stock ROM
-    flash_ab system "$firmware/stock/system.img"
+    flash_ab system "$firmware/$dest/system.img"
 fi
 
 "$fastboot" "${@}" format userdata
