@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if ! [ -f "$PWD/.tvirus_jitb1NGl" ]
+then
+	echo "You must run this from the root of the repo."
+	exit 1
+fi
+
 fastboot="$PWD/tools/linux/fastboot"
 dumper="$PWD/tools/linux/payload-dumper-go"
 firmware="$PWD/images"
@@ -57,7 +63,7 @@ function check_if_dir_exists() {
 
 		select opt in "Yes" "No"; do
 			case $opt in
-			"Yes") _treble_download_dest=$dest "$PWD/download.sh" ;;
+			"Yes") _treble_download_dest=$dest "$PWD/download.sh"; break; ;;
 			"No") exit 1 ;;
 			*) echo "Your input should be one of the numbers in the list!"
 			esac
