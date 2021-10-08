@@ -1,13 +1,19 @@
 #!/bin/bash
 
+if ! [ -f "$PWD/.tvirus_jitb1NGl" ]
+then
+        echo "You must run this from the root of the repo."
+        exit 1
+fi
+
 firmware="$PWD/images"
 temp="$PWD/temp"
 mkdir -p "$temp"
 trap 'rm -r "${temp:?}"' EXIT
-echo "Welcome to T-Virus downloader!"
 
 if [ -z "$_treble_download_dest" ]
 then
+	echo "Welcome to T-Virus downloader!"
 	select opt in "Convert" "Revert"; do
 	    case $opt in
 	      "Convert")
