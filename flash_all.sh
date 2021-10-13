@@ -29,7 +29,6 @@ done
 
 function flash_ab() {
     if ! "$fastboot" flash "$1_a" "$2"; then echo "Flash $1_a error"; exit 1; fi
-
     if ! "$fastboot" flash "$1_b" "$2"; then echo "Flash $1_b error"; exit 1; fi
 }
 
@@ -39,7 +38,6 @@ function flash() {
 
 function flash_raw_ab() {
     if ! "$fastboot" flash:raw "$1_a" "$2"; then echo "Flash $1_a error"; exit 1; fi
-
     if ! "$fastboot" flash:raw "$1_b" "$2"; then echo "Flash $1_b error"; exit 1; fi
 }
 
@@ -49,40 +47,35 @@ function erase() {
 
 function erase_ab() {
     if ! "$fastboot" erase "$1_a"; then echo "Erase $1_a error"; exit 1; fi
-
     if ! "$fastboot" erase "$1_b"; then echo "Erase $1_b error"; exit 1; fi
 }
 
 function check_if_dir_exists() {
 	if ! [ -d "$firmware/$1" ]
 	then
-		echo
-		echo "You need to download the firmware first."
-		echo "Would you like to download the firmware?"
-
-
-		select opt in "Yes" "No"; do
-			case $opt in
-			"Yes") _treble_download_dest=$dest "$PWD/download.sh"; break; ;;
-			"No") exit 1 ;;
-			*) echo "Your input should be one of the numbers in the list!"
+		while true; do
+			echo
+			read -r -p $'You need to download the firmware first.\nWould you like to download the firmware? [y/n]: ' yn
+			case $yn in
+				[Yy]*) "_treble_download_dest=$dest" "$PWD/download.sh"; return 0; ;;
+				[Nn]*) echo $'\nAborting...'; exit 1 ;;
 			esac
 		done
 	fi
 }
 
+check_if_dir_exists "$dest"
+
 echo "Repartitioning device..."
 erase misc "ERROR: Failed to modify partition table, please unlock the bootloader of your device!"
 
 
-check_if_dir_exists "$dest"
 if ! "$fastboot" "${@}" flash partition:0 "$firmware/$dest/gpt_both0.bin"; then
      echo "Flash main partition table error"
 
      exit 1
 fi
 
-check_if_dir_exists "common"
 flash_ab abl "$firmware/common/abl.img"
 flash_ab xbl "$firmware/common/xbl.img"
 
