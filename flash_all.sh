@@ -57,7 +57,7 @@ function check_if_dir_exists() {
 			echo
 			read -r -p $'You need to download the firmware first.\nWould you like to download the firmware? [y/n]: ' yn
 			case $yn in
-				[Yy]*) "_treble_download_dest=$dest" "$PWD/download.sh"; return 0; ;;
+				[Yy]*) _treble_download_dest="$dest" "$PWD/download.sh"; return 0; ;;
 				[Nn]*) echo $'\nAborting...'; exit 1 ;;
 			esac
 		done
