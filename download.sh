@@ -60,7 +60,7 @@ do
     echo "Downloading $image..."
     if already_exists "$image"
     then
-        wget --no-verbose --show-progress -O "$temp/$image.zip" "https://github.com/resident-nokia/t-virus/releases/download/tvirus-images_2021-10-08/$image.zip"
+        wget --no-verbose --show-progress -O "$temp/$image.zip" "https://github.com/resident-nokia/t-virus/releases/download/tvirus-images_2021-12-23/$image.zip"
         mkdir -p "$firmware/$image"
         unzip "$temp/$image.zip" -d "$firmware/$image"
         echo "Download for $image is completed."

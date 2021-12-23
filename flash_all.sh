@@ -91,7 +91,6 @@ flash_ab devcfg "$firmware/common/devcfg.img"
 flash_ab dsp "$firmware/common/dsp.img"
 flash_ab hidden "$firmware/common/hidden.img"
 flash_ab hyp "$firmware/common/hyp.img"
-flash_ab keymaster "$firmware/common/keymaster.img"
 flash_ab mdtp "$firmware/common/mdtp.img"
 flash_ab mdtpsecapp "$firmware/common/mdtpsecapp.img"
 flash_ab modem "$firmware/common/modem.img"
@@ -108,6 +107,7 @@ echo "Flashing firmware done"
 echo "Preparing for ROM flashing..."
 
 flash_raw_ab boot "$firmware/$dest/boot.img"
+flash_ab keymaster "$firmware/$dest/keymaster.img"
 erase_ab system
 erase misc
 
